@@ -37,16 +37,22 @@ public class User {// segunda clase
         return cofres;
     }
 
-    public void setCofres(int cofres) {
-        this.cofres = cofres;
+    public void setCofres(int cofres) {// validacion de cofres, el usuario tiene maximo 4
+        if (cofres<=4){
+            this.cofres = cofres;
+        }
+        
     }
 
     public int getCartas() {
         return cartas;
     }
 
-    public void setCartas(int cartas) {
-        this.cartas = cartas;
+    public void setCartas(int cartas) {// el usuario inicia con 5 
+        if (cartas==5){
+           this.cartas = cartas;
+        }
+       
     }
 
     @Override

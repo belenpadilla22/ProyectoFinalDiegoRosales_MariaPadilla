@@ -320,8 +320,7 @@ public class Juego extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Usuario registrado con existo");
             
             }
-            
-     
+       
     }
     
     public static boolean ValidarPassword (String correo){   
