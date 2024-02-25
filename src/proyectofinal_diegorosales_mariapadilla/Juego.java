@@ -57,6 +57,15 @@ public class Juego extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLayeredPane2 = new javax.swing.JLayeredPane();
+        Login = new javax.swing.JFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        User = new javax.swing.JTextField();
+        Contra = new javax.swing.JTextField();
+        Registro = new javax.swing.JButton();
         Inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -139,8 +148,6 @@ public class Juego extends javax.swing.JFrame {
                     .addGap(0, 13, Short.MAX_VALUE)))
         );
 
-        jLabel10.getAccessibleContext().setAccessibleName("");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -174,6 +181,81 @@ public class Juego extends javax.swing.JFrame {
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/login images.png"))); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel7.setText("Registration/Login");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("User:");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("PassWord:");
+
+        Registro.setBackground(new java.awt.Color(0, 51, 255));
+        Registro.setText("Registration");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(94, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel9)
+                            .addComponent(User, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                            .addComponent(Contra)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(Registro)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(Registro)
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login.getContentPane());
+        Login.getContentPane().setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -253,19 +335,28 @@ public class Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Contra;
     private javax.swing.JPanel Inicio;
     private javax.swing.JFrame JFrame_Menu;
+    private javax.swing.JFrame Login;
+    private javax.swing.JButton Registro;
+    private javax.swing.JTextField User;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
