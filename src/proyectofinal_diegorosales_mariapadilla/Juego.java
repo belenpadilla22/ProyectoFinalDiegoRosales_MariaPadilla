@@ -4,6 +4,9 @@ import java.awt.Color;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -199,6 +202,12 @@ public class Juego extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("PassWord:");
 
+        User.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UserMouseClicked(evt);
+            }
+        });
+
         Registro.setBackground(new java.awt.Color(0, 51, 255));
         Registro.setText("Registration");
 
@@ -295,10 +304,32 @@ public class Juego extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void UserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserMouseClicked
+        // TODO add your handling code here:
+        //aqui
+    }//GEN-LAST:event_UserMouseClicked
+// metodos
+    
+    public void ValidarUsuario (){
+        String UsuarioAnterior = "";
+        String usuarioActual = User.getText().trim();// elimina los espacios en blanco
+        if (usuarioActual.equalsIgnoreCase(UsuarioAnterior)){
+                JOptionPane.showMessageDialog(null, "Usuario repetido");
+            
+            }else{
+                JOptionPane.showMessageDialog(null, "Usuario registrado con existo");
+            
+            }
+            
+     
+    }
+    
+    public static boolean ValidarPassword (String correo){   
+        String regex = "^[a-zA-Z0-9]{6,}$";Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
+    }
+        public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

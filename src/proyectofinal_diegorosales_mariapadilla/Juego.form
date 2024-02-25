@@ -311,6 +311,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="User">
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UserMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Contra">
             </Component>
