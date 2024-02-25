@@ -30,13 +30,25 @@ public class Juego extends javax.swing.JFrame {
                 setLocationRelativeTo(null);
                 jFrame1.setVisible(true);
                 setVisible(false);
-                
-                
             }
         });
         timer.setRepeats(false);
         timer.start();
         
+        
+        Timer timer2=new Timer (3000,new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               Login.pack();
+               setLocationRelativeTo(null);
+               Login.setVisible(true);
+               jFrame1.setVisible(false);
+            }
+        
+        
+        });
+        timer2.setRepeats(false);
+        timer2.start();
     }
     
     /**
@@ -210,6 +222,11 @@ public class Juego extends javax.swing.JFrame {
 
         Registro.setBackground(new java.awt.Color(0, 51, 255));
         Registro.setText("Registration");
+        Registro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegistroMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -308,6 +325,20 @@ public class Juego extends javax.swing.JFrame {
         // TODO add your handling code here:
         //aqui
     }//GEN-LAST:event_UserMouseClicked
+
+    private void RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistroMouseClicked
+        // TODO add your handling code here:
+        ValidarUsuario();
+        if (!ValidarPassword(Contra.getText())){
+            JOptionPane.showMessageDialog(null, "Contraseña no valida ");
+        
+        }else {
+             JOptionPane.showMessageDialog(null, "Contraseña valida  ");
+        }
+        
+    }//GEN-LAST:event_RegistroMouseClicked
+
+
 // metodos
     
     public void ValidarUsuario (){
@@ -323,9 +354,9 @@ public class Juego extends javax.swing.JFrame {
        
     }
     
-    public static boolean ValidarPassword (String correo){   
+    public static boolean ValidarPassword (String password){   
         String regex = "^[a-zA-Z0-9]{6,}$";Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(correo);
+        Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
         public static void main(String args[]) {
