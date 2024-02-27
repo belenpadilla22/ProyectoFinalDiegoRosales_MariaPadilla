@@ -22,6 +22,7 @@ public class Juego extends javax.swing.JFrame {
     public Juego() {
        
         initComponents(); 
+        botones();
         
         Timer timer=new Timer (1900,new ActionListener() {
             @Override
@@ -65,7 +66,14 @@ public class Juego extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         JFrame_Menu = new javax.swing.JFrame();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        B_chat = new javax.swing.JButton();
+        B_Tv = new javax.swing.JButton();
+        B_Battle = new javax.swing.JButton();
+        B_Carta = new javax.swing.JButton();
+        B_Cofre = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         Login = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
@@ -76,6 +84,7 @@ public class Juego extends javax.swing.JFrame {
         User = new javax.swing.JTextField();
         Contra = new javax.swing.JTextField();
         Registro = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         Inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -105,18 +114,37 @@ public class Juego extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/background cut.jpg"))); // NOI18N
+        JFrame_Menu.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout JFrame_MenuLayout = new javax.swing.GroupLayout(JFrame_Menu.getContentPane());
-        JFrame_Menu.getContentPane().setLayout(JFrame_MenuLayout);
-        JFrame_MenuLayout.setHorizontalGroup(
-            JFrame_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        JFrame_MenuLayout.setVerticalGroup(
-            JFrame_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/trainingarena.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        JFrame_Menu.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 250, 260));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/menubarr - copia.png"))); // NOI18N
+        JFrame_Menu.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 480, 90));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/background cut.jpg"))); // NOI18N
+        JFrame_Menu.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
+
+        B_chat.setText("jButton1");
+        JFrame_Menu.getContentPane().add(B_chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 580, -1, 70));
+
+        B_Tv.setText("jButton2");
+        JFrame_Menu.getContentPane().add(B_Tv, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 577, -1, 80));
+
+        B_Battle.setText("jButton3");
+        B_Battle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_BattleMouseClicked(evt);
+            }
+        });
+        JFrame_Menu.getContentPane().add(B_Battle, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 577, 160, 80));
+
+        B_Carta.setText("jButton4");
+        JFrame_Menu.getContentPane().add(B_Carta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, 80));
+
+        B_Cofre.setText("jButton5");
+        JFrame_Menu.getContentPane().add(B_Cofre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 577, -1, 80));
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -215,6 +243,8 @@ public class Juego extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel4.setText("jLabel4");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Inicio.setBackground(new java.awt.Color(0, 0, 0));
@@ -260,17 +290,51 @@ public class Juego extends javax.swing.JFrame {
     private void RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistroMouseClicked
         // TODO add your handling code here:
         ValidarUsuario();
-        if (!ValidarPassword(Contra.getText())){
+         if (!ValidarPassword(Contra.getText())){
             JOptionPane.showMessageDialog(Login, "Contraseña no valida ");   
         }else {
              JOptionPane.showMessageDialog(Login, "Contraseña valida  ");
+             JFrame_Menu.pack();
+             setLocationRelativeTo(null);
+             JFrame_Menu.setVisible(true);
+             Login.setVisible(false);
         }
+         
+         
         
+       
     }//GEN-LAST:event_RegistroMouseClicked
+
+    private void B_BattleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_BattleMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_B_BattleMouseClicked
 
 
 // metodos
+    public void botones (){
+        B_Battle.setOpaque(false);
+        B_Battle.setContentAreaFilled(false);
+        B_Battle.setBorderPainted(false);
+        //
+        B_Carta.setOpaque(false);
+        B_Carta.setContentAreaFilled(false);
+        B_Carta.setBorderPainted(false);
+        //
+        B_Cofre.setOpaque(false);
+        B_Cofre.setContentAreaFilled(false);
+        B_Cofre.setBorderPainted(false);
+        //
+        B_Tv.setOpaque(false);
+        B_Tv.setContentAreaFilled(false);
+        B_Tv.setBorderPainted(false);
+        //
+        B_chat.setOpaque(false);
+        B_chat.setContentAreaFilled(false);
+        B_chat.setBorderPainted(false);
     
+    
+    }
     public void ValidarUsuario (){
         String UsuarioAnterior = "";
         String usuarioActual = User.getText().trim();// elimina los espacios en blanco
@@ -288,6 +352,7 @@ public class Juego extends javax.swing.JFrame {
         String regex = "^[a-zA-Z0-9]{6,}$";Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
+        
     }
         public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -326,6 +391,11 @@ public class Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_Battle;
+    private javax.swing.JButton B_Carta;
+    private javax.swing.JButton B_Cofre;
+    private javax.swing.JButton B_Tv;
+    private javax.swing.JButton B_chat;
     private javax.swing.JTextField Contra;
     private javax.swing.JPanel Inicio;
     private javax.swing.JFrame JFrame_Menu;
@@ -337,6 +407,9 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
