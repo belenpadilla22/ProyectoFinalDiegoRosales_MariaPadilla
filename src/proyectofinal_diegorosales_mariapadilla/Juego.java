@@ -1,5 +1,5 @@
 package proyectofinal_diegorosales_mariapadilla;
-
+// ola
 import java.awt.Color;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.event.ActionEvent;
@@ -69,11 +69,11 @@ public class Juego extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        B_chat = new javax.swing.JButton();
+        B_Clan = new javax.swing.JButton();
         B_Tv = new javax.swing.JButton();
         B_Battle = new javax.swing.JButton();
-        B_Carta = new javax.swing.JButton();
-        B_Cofre = new javax.swing.JButton();
+        B_Mazo = new javax.swing.JButton();
+        B_Tienda = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         Login = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
@@ -85,6 +85,14 @@ public class Juego extends javax.swing.JFrame {
         Contra = new javax.swing.JTextField();
         Registro = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jFrame2 = new javax.swing.JFrame();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         Inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -126,8 +134,8 @@ public class Juego extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/background cut.jpg"))); // NOI18N
         JFrame_Menu.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
-        B_chat.setText("jButton1");
-        JFrame_Menu.getContentPane().add(B_chat, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 580, -1, 70));
+        B_Clan.setText("jButton1");
+        JFrame_Menu.getContentPane().add(B_Clan, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 580, -1, 70));
 
         B_Tv.setText("jButton2");
         JFrame_Menu.getContentPane().add(B_Tv, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 577, -1, 80));
@@ -140,11 +148,16 @@ public class Juego extends javax.swing.JFrame {
         });
         JFrame_Menu.getContentPane().add(B_Battle, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 577, 160, 80));
 
-        B_Carta.setText("jButton4");
-        JFrame_Menu.getContentPane().add(B_Carta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, 80));
+        B_Mazo.setText("jButton4");
+        B_Mazo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_MazoMouseClicked(evt);
+            }
+        });
+        JFrame_Menu.getContentPane().add(B_Mazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, 80));
 
-        B_Cofre.setText("jButton5");
-        JFrame_Menu.getContentPane().add(B_Cofre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 577, -1, 80));
+        B_Tienda.setText("jButton5");
+        JFrame_Menu.getContentPane().add(B_Tienda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 577, -1, 80));
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -192,7 +205,7 @@ public class Juego extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -229,7 +242,7 @@ public class Juego extends javax.swing.JFrame {
                 .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(Registro)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login.getContentPane());
@@ -244,6 +257,42 @@ public class Juego extends javax.swing.JFrame {
         );
 
         jLabel4.setText("jLabel4");
+
+        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/background cut.jpg"))); // NOI18N
+        jLayeredPane1.setLayer(jLabel10, javax.swing.JLayeredPane.PALETTE_LAYER);
+        jLayeredPane1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 500));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/emptycarddeck.png"))); // NOI18N
+        jLayeredPane1.setLayer(jLabel13, javax.swing.JLayeredPane.MODAL_LAYER);
+        jLayeredPane1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 350, 200));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/levelbar.png"))); // NOI18N
+        jLayeredPane1.setLayer(jLabel14, javax.swing.JLayeredPane.MODAL_LAYER);
+        jLayeredPane1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 20));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/gold bar.png"))); // NOI18N
+        jLayeredPane1.setLayer(jLabel16, javax.swing.JLayeredPane.MODAL_LAYER);
+        jLayeredPane1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 110, 20));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/gem bar.png"))); // NOI18N
+        jLabel17.setToolTipText("");
+        jLayeredPane1.setLayer(jLabel17, javax.swing.JLayeredPane.MODAL_LAYER);
+        jLayeredPane1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 110, 20));
+
+        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
+        jFrame2.getContentPane().setLayout(jFrame2Layout);
+        jFrame2Layout.setHorizontalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jFrame2Layout.setVerticalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane1)
+        );
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/background cut.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,6 +359,10 @@ public class Juego extends javax.swing.JFrame {
        
     }//GEN-LAST:event_B_BattleMouseClicked
 
+    private void B_MazoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_MazoMouseClicked
+        
+    }//GEN-LAST:event_B_MazoMouseClicked
+
 
 // metodos
     public void botones (){
@@ -317,21 +370,21 @@ public class Juego extends javax.swing.JFrame {
         B_Battle.setContentAreaFilled(false);
         B_Battle.setBorderPainted(false);
         //
-        B_Carta.setOpaque(false);
-        B_Carta.setContentAreaFilled(false);
-        B_Carta.setBorderPainted(false);
+        B_Mazo.setOpaque(false);
+        B_Mazo.setContentAreaFilled(false);
+        B_Mazo.setBorderPainted(false);
         //
-        B_Cofre.setOpaque(false);
-        B_Cofre.setContentAreaFilled(false);
-        B_Cofre.setBorderPainted(false);
+        B_Tienda.setOpaque(false);
+        B_Tienda.setContentAreaFilled(false);
+        B_Tienda.setBorderPainted(false);
         //
         B_Tv.setOpaque(false);
         B_Tv.setContentAreaFilled(false);
         B_Tv.setBorderPainted(false);
         //
-        B_chat.setOpaque(false);
-        B_chat.setContentAreaFilled(false);
-        B_chat.setBorderPainted(false);
+        B_Clan.setOpaque(false);
+        B_Clan.setContentAreaFilled(false);
+        B_Clan.setBorderPainted(false);
     
     
     }
@@ -392,10 +445,10 @@ public class Juego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Battle;
-    private javax.swing.JButton B_Carta;
-    private javax.swing.JButton B_Cofre;
+    private javax.swing.JButton B_Clan;
+    private javax.swing.JButton B_Mazo;
+    private javax.swing.JButton B_Tienda;
     private javax.swing.JButton B_Tv;
-    private javax.swing.JButton B_chat;
     private javax.swing.JTextField Contra;
     private javax.swing.JPanel Inicio;
     private javax.swing.JFrame JFrame_Menu;
@@ -403,16 +456,24 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JButton Registro;
     private javax.swing.JTextField User;
     private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
