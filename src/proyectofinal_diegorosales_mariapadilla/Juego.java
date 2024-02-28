@@ -4,17 +4,20 @@ import java.awt.Color;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+
 /**
  *
  * @author belen
  */
 public class Juego extends javax.swing.JFrame {
+    ArrayList<User>usuarios2=new ArrayList();
 
     /**
      * Creates new form Juego
@@ -338,20 +341,18 @@ public class Juego extends javax.swing.JFrame {
 
     private void RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistroMouseClicked
         // TODO add your handling code here:
+        User us = new User(User.getText(), Contra.getText());
+        AdministradorUsuarios ad = new AdministradorUsuarios("./Usuarios.MBP");
+        ad.CargarArchivo();
+        ArrayList<User> usuarios2 = new ArrayList<>();
+        usuarios2.add(us);  
+        ad.setUsuarios(usuarios2);
+        ad.EscribirArchivo();
+        User.setText(" ");
+        Contra.setText(" ");
         ValidarUsuario();
-         if (!ValidarPassword(Contra.getText())){
-            JOptionPane.showMessageDialog(Login, "Contraseña no valida ");   
-        }else {
-             JOptionPane.showMessageDialog(Login, "Contraseña valida  ");
-             JFrame_Menu.pack();
-             setLocationRelativeTo(null);
-             JFrame_Menu.setVisible(true);
-             Login.setVisible(false);
-        }
-         
-         
-        
-       
+        ValidadContraseña();
+
     }//GEN-LAST:event_RegistroMouseClicked
 
     private void B_BattleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_BattleMouseClicked
@@ -400,6 +401,21 @@ public class Juego extends javax.swing.JFrame {
             }
        
     }
+    public void ValidadContraseña (){
+         if (!ValidarPassword(Contra.getText())){
+            JOptionPane.showMessageDialog(Login, "Contraseña no valida ");   
+        }else {
+             JOptionPane.showMessageDialog(Login, "Contraseña valida  ");
+             JFrame_Menu.pack();
+             setLocationRelativeTo(null);
+             JFrame_Menu.setVisible(true);
+             Login.setVisible(false);
+        }
+         
+    
+    
+    
+    }
     
     public static boolean ValidarPassword (String password){   
         String regex = "^[a-zA-Z0-9]{6,}$";Pattern pattern = Pattern.compile(regex);
@@ -441,6 +457,9 @@ public class Juego extends javax.swing.JFrame {
                 new Juego().setVisible(true);
             }
         });
+        
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,13 +1,18 @@
 
 package proyectofinal_diegorosales_mariapadilla;
 
-public class User {// segunda clase
+import java.io.Serializable;
+
+public class User implements Serializable{// segunda clase
     private String usuario,password;
     private int cofres,cartas;
+    private static final long SerialVersionUID=777L;
     
     // constructores
 
-    public User() {
+    public User(String usuario, String password) {
+        this.usuario = usuario;
+        this.password = password;
     }
 
     public User(String usuario, String password, int cofres, int cartas) {
