@@ -1,6 +1,7 @@
 
 package proyectofinal_diegorosales_mariapadilla;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -49,7 +50,10 @@ public class AdministradorUsuarios {
                      while ((temp=(User)objeto.readObject())!=null){// leer de objeto a objeto
                           usuarios.add(temp);
                      }
-                 } catch (Exception e) {
+                 } catch (EOFException e) {
+                     //es una excepción que se lanza cuando se intenta 
+                     //leer más allá del final de un archivo o secuencia de entrada
+                  
                  }
                  objeto.close();
                  entrada.close();

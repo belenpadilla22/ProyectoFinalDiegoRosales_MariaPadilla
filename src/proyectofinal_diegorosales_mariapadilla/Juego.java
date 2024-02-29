@@ -340,14 +340,13 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_UserMouseClicked
 
     private void RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistroMouseClicked
-        // TODO add your handling code here:
+        if (User.getText().isEmpty() || Contra.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(Login, "Por favor, completa ambos campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
         User us = new User(User.getText(), Contra.getText());
-        AdministradorUsuarios ad = new AdministradorUsuarios("./Usuarios.MBP");
-        ad.CargarArchivo();
-        ArrayList<User> usuarios2 = new ArrayList<>();
-        usuarios2.add(us);  
-        ad.setUsuarios(usuarios2);
-        ad.EscribirArchivo();
+        guardarUsuarioEnArchivo(us);
         User.setText(" ");
         Contra.setText(" ");
         ValidarUsuario();
@@ -366,6 +365,19 @@ public class Juego extends javax.swing.JFrame {
 
 
 // metodos
+    public void guardarUsuarioEnArchivo(User usuario) {
+    AdministradorUsuarios ad = new AdministradorUsuarios("./Usuarios.MBP");
+
+    try {
+        ad.CargarArchivo();
+        ArrayList<User> usuarios2 = new ArrayList<>();
+        usuarios2.add(usuario);
+        ad.setUsuarios(usuarios2);
+        ad.EscribirArchivo();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
     public void botones (){
         B_Battle.setOpaque(false);
         B_Battle.setContentAreaFilled(false);
