@@ -17,8 +17,7 @@ import javax.swing.Timer;
  * @author belen
  */
 public class Juego extends javax.swing.JFrame {
-    ArrayList<User>usuarios2=new ArrayList();
-
+   
     /**
      * Creates new form Juego
      */
@@ -347,10 +346,10 @@ public class Juego extends javax.swing.JFrame {
 
         User us = new User(User.getText(), Contra.getText());
         guardarUsuarioEnArchivo(us);
+        ValidadContraseña();
         User.setText(" ");
         Contra.setText(" ");
-        ValidarUsuario();
-        ValidadContraseña();
+       
 
     }//GEN-LAST:event_RegistroMouseClicked
 
@@ -365,19 +364,23 @@ public class Juego extends javax.swing.JFrame {
 
 
 // metodos
+    
     public void guardarUsuarioEnArchivo(User usuario) {
-    AdministradorUsuarios ad = new AdministradorUsuarios("./Usuarios.MBP");
+     AdministradorUsuarios ad = new AdministradorUsuarios("./Usuarios.MBP");
 
-    try {
-        ad.CargarArchivo();
-        ArrayList<User> usuarios2 = new ArrayList<>();
-        usuarios2.add(usuario);
-        ad.setUsuarios(usuarios2);
-        ad.EscribirArchivo();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+        try {
+            ad.CargarArchivo();
+            ArrayList<User> usuarios2 = new ArrayList<>();
+            usuarios2.add(usuario);
+            ad.setUsuarios(usuarios2);
+            ad.EscribirArchivo();
+        } catch (Exception e) {
+             e.printStackTrace();
+         }
 }
+    public boolean usuarioYaExiste(ArrayList<User> usuarios, String nuevoUsuario) {
+        return usuarios.stream() .anyMatch(u -> u.getUsuario().equalsIgnoreCase(nuevoUsuario));
+    }
     public void botones (){
         B_Battle.setOpaque(false);
         B_Battle.setContentAreaFilled(false);
@@ -401,18 +404,7 @@ public class Juego extends javax.swing.JFrame {
     
     
     }
-    public void ValidarUsuario (){
-        String UsuarioAnterior = "";
-        String usuarioActual = User.getText().trim();// elimina los espacios en blanco
-        if (usuarioActual.equalsIgnoreCase(UsuarioAnterior)){
-                JOptionPane.showMessageDialog(Login, "Usuario repetido");
-            
-            }else{
-                JOptionPane.showMessageDialog(Login, "Usuario registrado con existo");
-            
-            }
-       
-    }
+  
     public void ValidadContraseña (){
          if (!ValidarPassword(Contra.getText())){
             JOptionPane.showMessageDialog(Login, "Contraseña no valida ");   
@@ -423,12 +415,10 @@ public class Juego extends javax.swing.JFrame {
              JFrame_Menu.setVisible(true);
              Login.setVisible(false);
         }
-         
-    
-    
-    
+       
     }
     
+
     public static boolean ValidarPassword (String password){   
         String regex = "^[a-zA-Z0-9]{6,}$";Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
