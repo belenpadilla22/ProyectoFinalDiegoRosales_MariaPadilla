@@ -378,9 +378,7 @@ public class Juego extends javax.swing.JFrame {
              e.printStackTrace();
          }
 }
-    public boolean usuarioYaExiste(ArrayList<User> usuarios, String nuevoUsuario) {
-        return usuarios.stream() .anyMatch(u -> u.getUsuario().equalsIgnoreCase(nuevoUsuario));
-    }
+    
     public void botones (){
         B_Battle.setOpaque(false);
         B_Battle.setContentAreaFilled(false);
