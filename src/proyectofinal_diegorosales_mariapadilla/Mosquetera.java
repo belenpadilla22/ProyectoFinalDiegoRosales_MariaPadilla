@@ -8,6 +8,6 @@ package proyectofinal_diegorosales_mariapadilla;
  *
  * @author belen
  */
-public class Mosquetera {
+public class Mosquetera extends Carta{
     
 }

@@ -87,13 +87,18 @@ public class Juego extends javax.swing.JFrame {
         Contra = new javax.swing.JTextField();
         Registro = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jFrame2 = new javax.swing.JFrame();
+        jF_Mazo = new javax.swing.JFrame();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel10 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jB_Duende = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jb_MiniPekka = new javax.swing.JButton();
+        jb_Caballero = new javax.swing.JButton();
+        jb_gigante = new javax.swing.JButton();
+        jb_flechas = new javax.swing.JButton();
+        jb_esqueleto = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         Inicio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -154,6 +159,11 @@ public class Juego extends javax.swing.JFrame {
         B_Mazo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 B_MazoMouseClicked(evt);
+            }
+        });
+        B_Mazo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_MazoActionPerformed(evt);
             }
         });
         JFrame_Menu.getContentPane().add(B_Mazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, 80));
@@ -264,11 +274,11 @@ public class Juego extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/background cut.jpg"))); // NOI18N
         jLayeredPane1.setLayer(jLabel10, javax.swing.JLayeredPane.PALETTE_LAYER);
-        jLayeredPane1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 500));
+        jLayeredPane1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 590));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/emptycarddeck.png"))); // NOI18N
-        jLayeredPane1.setLayer(jLabel13, javax.swing.JLayeredPane.MODAL_LAYER);
-        jLayeredPane1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 350, 200));
+        jB_Duende.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/emptycarddeck.png"))); // NOI18N
+        jLayeredPane1.setLayer(jB_Duende, javax.swing.JLayeredPane.MODAL_LAYER);
+        jLayeredPane1.add(jB_Duende, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 380, 220));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IM/levelbar.png"))); // NOI18N
         jLayeredPane1.setLayer(jLabel14, javax.swing.JLayeredPane.MODAL_LAYER);
@@ -283,14 +293,29 @@ public class Juego extends javax.swing.JFrame {
         jLayeredPane1.setLayer(jLabel17, javax.swing.JLayeredPane.MODAL_LAYER);
         jLayeredPane1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 110, 20));
 
-        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
-        jFrame2.getContentPane().setLayout(jFrame2Layout);
-        jFrame2Layout.setHorizontalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jb_MiniPekka.setText("jButton1");
+        jLayeredPane1.add(jb_MiniPekka, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 60));
+
+        jb_Caballero.setText("jButton1");
+        jLayeredPane1.add(jb_Caballero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 90, 60));
+
+        jb_gigante.setText("jButton1");
+        jLayeredPane1.add(jb_gigante, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 90, 60));
+
+        jb_flechas.setText("jButton1");
+        jLayeredPane1.add(jb_flechas, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 110, 80, 60));
+
+        jb_esqueleto.setText("jButton1");
+        jLayeredPane1.add(jb_esqueleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 60));
+
+        javax.swing.GroupLayout jF_MazoLayout = new javax.swing.GroupLayout(jF_Mazo.getContentPane());
+        jF_Mazo.getContentPane().setLayout(jF_MazoLayout);
+        jF_MazoLayout.setHorizontalGroup(
+            jF_MazoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jFrame2Layout.setVerticalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jF_MazoLayout.setVerticalGroup(
+            jF_MazoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLayeredPane1)
         );
 
@@ -359,8 +384,13 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_B_BattleMouseClicked
 
     private void B_MazoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_MazoMouseClicked
+        //mazo
         
     }//GEN-LAST:event_B_MazoMouseClicked
+
+    private void B_MazoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_MazoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B_MazoActionPerformed
 
 
 // metodos
@@ -399,6 +429,27 @@ public class Juego extends javax.swing.JFrame {
         B_Clan.setOpaque(false);
         B_Clan.setContentAreaFilled(false);
         B_Clan.setBorderPainted(false);
+        /////
+        jb_Caballero.setOpaque(false);
+        jb_Caballero.setContentAreaFilled(false);
+        jb_Caballero.setBorderPainted(false);
+        //
+        jb_MiniPekka.setOpaque(false);
+        jb_MiniPekka.setContentAreaFilled(false);
+        jb_MiniPekka.setBorderPainted(false);
+        //
+        jb_esqueleto.setOpaque(false);
+        jb_esqueleto.setContentAreaFilled(false);
+        jb_esqueleto.setBorderPainted(false);
+        //
+        jb_flechas.setOpaque(false);
+        jb_flechas.setContentAreaFilled(false);
+        jb_flechas.setBorderPainted(false);
+        //
+        jb_gigante.setOpaque(false);
+        jb_gigante.setContentAreaFilled(false);
+        jb_gigante.setBorderPainted(false);
+        
     
     
     }
@@ -474,13 +525,13 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JFrame Login;
     private javax.swing.JButton Registro;
     private javax.swing.JTextField User;
+    private javax.swing.JLabel jB_Duende;
+    private javax.swing.JFrame jF_Mazo;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -496,5 +547,10 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton jb_Caballero;
+    private javax.swing.JButton jb_MiniPekka;
+    private javax.swing.JButton jb_esqueleto;
+    private javax.swing.JButton jb_flechas;
+    private javax.swing.JButton jb_gigante;
     // End of variables declaration//GEN-END:variables
 }

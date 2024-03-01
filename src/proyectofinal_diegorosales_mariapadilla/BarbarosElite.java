@@ -8,6 +8,6 @@ package proyectofinal_diegorosales_mariapadilla;
  *
  * @author belen
  */
-public class BarbarosElite {
+public class BarbarosElite extends Carta{
     
 }

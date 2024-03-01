@@ -8,6 +8,6 @@ package proyectofinal_diegorosales_mariapadilla;
  *
  * @author belen
  */
-public class Montapuerco {
+public class Montapuerco extends Carta{
     
 }

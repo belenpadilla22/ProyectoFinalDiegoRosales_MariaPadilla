@@ -2,13 +2,13 @@ package proyectofinal_diegorosales_mariapadilla;
 
 
 public class Carta {
-    String nombre;
-    int hp;
-    int damage;
-    int speed;
-    int count;
-    boolean targetcard;
-    int elixir;
+    private String nombre;
+    private int hp;
+    private int damage;
+    private int speed;
+    private int count;
+    private boolean targetcard;
+    private int elixir;
 
     public int getElixir() {
         return elixir;
