@@ -399,6 +399,7 @@ public class Juego extends javax.swing.JFrame {
        
         User.setText("");
         Contra.setText("");
+        //
 
     }//GEN-LAST:event_RegistroMouseClicked
 
