@@ -9,6 +9,10 @@ public class User implements Serializable{// segunda clase
     private static final long SerialVersionUID=777L;
     
     // constructores
+    public User(String usuario) {
+        this.usuario = usuario;
+        
+    }
 
     public User(String usuario, String password) {
         this.usuario = usuario;

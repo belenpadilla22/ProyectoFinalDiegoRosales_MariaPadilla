@@ -17,6 +17,8 @@ import javax.swing.Timer;
  * @author belen
  */
 public class Juego extends javax.swing.JFrame {
+    private ArrayList<User> usuarios = new ArrayList();
+
    
     /**
      * Creates new form Juego
@@ -29,9 +31,9 @@ public class Juego extends javax.swing.JFrame {
         Timer timer=new Timer (1900,new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //pack();
                 jFrame1.pack();
                 setLocationRelativeTo(null);
-                setSize(400, 300);
                 jFrame1.setVisible(true);
                 setVisible(false);
             }
@@ -364,17 +366,39 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_UserMouseClicked
 
     private void RegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistroMouseClicked
-        if (User.getText().isEmpty() || Contra.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(Login, "Por favor, completa ambos campos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-        User us = new User(User.getText(), Contra.getText());
-        guardarUsuarioEnArchivo(us);
+        AdministradorUsuarios ad = new AdministradorUsuarios("./Jugadores.MBP");
+        ad.CargarArchivo();
         ValidadContraseña();
-        User.setText(" ");
-        Contra.setText(" ");
+        
+        if (ad.getUsuarios().isEmpty()) { // Crear jugador nuevo (Si no ahy ningun jugador anteriormente)
+            User u = new User(User.getText());
+            ad.getUsuarios().add(u); // Agrego
+            ad.EscribirArchivo();// 
+            usuarios.add(u); // Agreggo al global
+            JOptionPane.showMessageDialog(Login, "Jugador Creado");
+
+        } else {
+
+            boolean rep = false;
+            for (User us : ad.getUsuarios()) {
+                if (us.getUsuario().equals(User.getText())) {
+                    JOptionPane.showMessageDialog(Login, "Usuario ya existe");
+                    rep = true;
+                }
+
+            }
+            if (!rep) {
+                User u = new User(User.getText());
+                ad.getUsuarios().add(u);
+                ad.EscribirArchivo();
+                usuarios.add(u);
+                JOptionPane.showMessageDialog(Login, "Jugador Creado");
+            }
+
+        }
        
+        User.setText("");
+        Contra.setText("");
 
     }//GEN-LAST:event_RegistroMouseClicked
 
@@ -395,19 +419,6 @@ public class Juego extends javax.swing.JFrame {
 
 // metodos
     
-    public void guardarUsuarioEnArchivo(User usuario) {
-     AdministradorUsuarios ad = new AdministradorUsuarios("./Usuarios.MBP");
-
-        try {
-            ad.CargarArchivo();
-            ArrayList<User> usuarios2 = new ArrayList<>();
-            usuarios2.add(usuario);
-            ad.setUsuarios(usuarios2);
-            ad.EscribirArchivo();
-        } catch (Exception e) {
-             e.printStackTrace();
-         }
-}
     
     public void botones (){
         B_Battle.setOpaque(false);
@@ -512,6 +523,7 @@ public class Juego extends javax.swing.JFrame {
         
         
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Battle;
